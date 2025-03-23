@@ -1,56 +1,77 @@
 # Customer Churn Prediction
 
 ## Problem Statement
-In today's competitive business landscape, customer retention is paramount for sustainable growth and success. Our challenge is to develop a predictive model that can identify customers who are at risk of churning – discontinuing their use of our service. Customer churn can lead to a significant loss of revenue and a decline in market share. By leveraging machine learning techniques, we aim to build a model that can accurately predict whether a customer is likely to churn based on their historical usage behavior, demographic information, and subscription details. This predictive model will allow us to proactively target high-risk customers with personalized retention strategies, ultimately helping us enhance customer satisfaction, reduce churn rates, and optimize our business strategies. The goal is to create an effective solution that contributes to the long-term success of our company by fostering customer loyalty and engagement.
+Customer churn is a critical issue for businesses, leading to revenue loss and reduced market share. The goal of this project is to develop a machine learning model that predicts whether a customer will churn (discontinue service) based on their historical usage, demographic information, and subscription details. This will help businesses take proactive steps to retain high-risk customers and optimize their retention strategies.
 
-## Data Description
-The dataset consists of customer information for a churn prediction problem. It includes the following columns:
+## Dataset Description
+The dataset used for this project is `Churn_Modelling.csv`, which contains customer details and subscription-related information. The key features in the dataset include:
 
-- **CustomerID**: Unique identifier for each customer.  
-- **Name**: Name of the customer.  
-- **Age**: Age of the customer.  
-- **Gender**: Gender of the customer (Male or Female).  
-- **Location**: Location where the customer is based, with options including Houston, Los Angeles, Miami, Chicago, and New York.  
-- **Subscription_Length_Months**: The number of months the customer has been subscribed.  
-- **Monthly_Bill**: Monthly bill amount for the customer.  
-- **Total_Usage_GB**: Total usage in gigabytes.  
-- **Churn**: A binary indicator (1 or 0) representing whether the customer has churned (1) or not (0).  
+- **CustomerId**: Unique identifier for each customer (Dropped during preprocessing).
+- **Surname**: Customer's last name (Dropped during preprocessing).
+- **CreditScore**: Credit score of the customer.
+- **Geography**: Customer's country (e.g., France, Spain, Germany).
+- **Gender**: Male or Female.
+- **Age**: Customer's age.
+- **Tenure**: Number of years the customer has been with the company.
+- **Balance**: Customer's account balance.
+- **NumOfProducts**: Number of products the customer has with the company.
+- **HasCrCard**: Whether the customer has a credit card (1 = Yes, 0 = No).
+- **IsActiveMember**: Whether the customer is an active member (1 = Yes, 0 = No).
+- **EstimatedSalary**: Customer's estimated salary.
+- **Exited (Target Variable)**: 1 if the customer churned, 0 otherwise.
 
 ## Technologies Used
 ### **Programming Language**
-- **Python**: Used for data analysis, modeling, and implementation of machine learning algorithms.
+- **Python**: Used for data analysis, preprocessing, and machine learning.
 
 ### **Libraries and Tools**
-- **Pandas**: Data manipulation and analysis  
-- **NumPy**: Numerical computing and array operations  
-- **Matplotlib & Seaborn**: Data visualization  
-- **Jupyter Notebook**: Interactive coding and documentation  
-- **Scikit-Learn**: Machine learning library  
-- **Random Forest Classifier**: Ensemble learning model  
+- **Pandas**: Data manipulation and preprocessing.
+- **NumPy**: Numerical operations.
+- **Matplotlib & Seaborn**: Data visualization.
+- **Scikit-Learn**: Machine learning models and evaluation.
+- **XGBoost & GradientBoosting**: Advanced ensemble models.
+- **TensorFlow/Keras**: Neural networks for deep learning models.
+
+## Exploratory Data Analysis (EDA)
+- **Checked for missing values and duplicate records**.
+- **Performed statistical summary of numerical and categorical features**.
+- **Plotted a heatmap to visualize correlations among numerical features**.
+- **Dropped unnecessary columns (`CustomerId`, `Surname`)**.
 
 ## Machine Learning Models Used
 - **Logistic Regression**
-- **Decision Tree**
+- **Decision Tree Classifier**
+- **Random Forest Classifier**
 - **K-Nearest Neighbors (KNN)**
 - **Support Vector Machine (SVM)**
 - **Naive Bayes**
-- **AdaBoost**
-- **Gradient Boosting**
+- **AdaBoost & Gradient Boosting**
 - **XGBoost**
 - **Neural Networks (TensorFlow & Keras)**
 
 ## Model Evaluation Metrics
-- **Accuracy**
-- **Precision, Recall, and F1-score**
-- **Confusion Matrix**
-- **ROC Curve and AUC (Area Under Curve)**
+- **Accuracy**: Overall correctness of the model.
+- **Precision, Recall, and F1-score**: To assess model performance for class imbalance.
+- **Confusion Matrix**: To analyze true positives, false positives, etc.
+- **ROC Curve & AUC**: To measure classification performance.
 
 ## Data Processing Techniques
-- **StandardScaler**: Standardizes features by removing the mean and scaling to unit variance.  
-- **Principal Component Analysis (PCA)**: Dimensionality reduction for feature selection.  
-- **GridSearchCV**: Hyperparameter tuning for optimal model performance.  
-- **Cross-Validation**: Evaluates generalization performance of models.  
-- **Early Stopping & ModelCheckpoint**: Prevents overfitting and saves the best model.  
+- **Feature Scaling**: StandardScaler used to normalize numerical features.
+- **Dimensionality Reduction**: Principal Component Analysis (PCA) for feature selection.
+- **Hyperparameter Tuning**: GridSearchCV used for optimizing model parameters.
+- **Cross-Validation**: Evaluates model generalization on unseen data.
+- **Early Stopping & ModelCheckpoint**: Used for preventing overfitting in neural networks.
 
 ## Outcome
-The outcome of this customer churn prediction project involves developing a machine learning model to predict whether customers are likely to churn or not. This prediction is based on various customer attributes such as age, gender, location, subscription length, monthly bill, and total usage. The model's primary purpose is to assist in identifying customers who are at a higher risk of churning, enabling the business to take proactive measures to retain them. By using the trained model to predict churn, the company can allocate resources more effectively, personalize engagement strategies, and implement targeted retention efforts. Ultimately, the project's success is measured by the model's ability to make predictions, helping the company reduce churn rates, improve customer satisfaction, and optimize its customer retention strategies.
+By building an effective customer churn prediction model, businesses can identify high-risk customers and take targeted actions to retain them. This project provides insights into customer behavior, enabling companies to enhance customer satisfaction, reduce churn rates, and optimize business strategies. The final trained model can be deployed to predict customer churn in real-time, helping businesses improve retention and maximize revenue.
+
+## How to Run the Project
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/VijayaLakshmiDwarakacherla/Customer-Churn-Prediction.git
+   cd Customer-Churn-Prediction
+   ```
+2. **Run the Jupyter Notebook**:
+   ```bash
+   jupyter notebook Customer_Churn_Prediction.ipynb
+   ```
